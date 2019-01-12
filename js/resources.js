@@ -108,3 +108,13 @@
         isReady: isReady
     };
 })();
+
+
+let images = [
+    'images/char-princess-girl.png',
+    'images/char-boy.png',
+    'images/char-horn-girl.png',
+    'images/char-pink-girl.png',
+    'images/char-cat-girl.png',
+];
+Resources.load(images);
