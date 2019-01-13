@@ -1,5 +1,7 @@
 //Declare a varible for a character to act as a player
 //Global variables
+let isGameOver=true;
+
  let character = 'images/char-boy.png';
 
 //declare an allEnemies array here
@@ -32,6 +34,7 @@ $('li').on('click',function(e){
 
 //function to start a game
 function startGame(){
+    isGameOver = false;
     player.sprite = character;
     //Start with only one enemy and as user scores more, add more enemies
     allEnemies.push(createEnemy(player));
@@ -89,6 +92,7 @@ function reduceLife(){
         //game over
         $('.modal-body p').text(`Your score: ${currentScore}`);
         $('.modal').show();
+        isGameOver = true;
     }
 }
 
@@ -120,6 +124,6 @@ document.addEventListener('keyup', function(e) {
         39: 'right',
         40: 'down'
     };
-
+    if(isGameOver)return;
     player.handleInput(allowedKeys[e.keyCode]);
 });
