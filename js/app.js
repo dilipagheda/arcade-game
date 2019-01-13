@@ -1,15 +1,23 @@
- //Declare a varible for a character to act as a player
+//Declare a varible for a character to act as a player
 //Global variables
  let character = 'images/char-boy.png';
 
 //declare an allEnemies array here
 let allEnemies = [];
+
 //row_number is the row where enemy will appear. possible values are 0,1,2 for each of the three rows.
 let row_number=0;
+
+//Create a player object using createPlayer method and pass in a character
 let player = createPlayer(character);
+
+//define variables for lives and score
 let livesRemoved=0;
 let currentScore =0;
+
+//define a constant for total lives
 const TOTAL_LIVES=5;
+
 //Click listener for allowing user to choose a character and then get value of image path in a variable
 $('li').on('click',function(e){
     character = $(e.target).attr('src');
@@ -23,13 +31,14 @@ $('li').on('click',function(e){
     startGame();
 })
 
+//function to start a game
 function startGame(){
-
     player.sprite = character;
     //Start with only one enemy and as user scores more, add more enemies
     allEnemies.push(createEnemy(player));
 }
 
+//function to crate an enemy
 function createEnemy(){
     let e = new Enemy(row_number++);
     row_number = row_number > 2?0:row_number;
@@ -37,28 +46,36 @@ function createEnemy(){
     return e;
 }
 
+//function to create a player
 function createPlayer(character){
     // Create an instance of a Player class
     let player = new Player(character);
-    // Assign a callback function which player will call each time player scores
-    player.increaseDifficulty = increaseDifficulty;
+    // Assign a callback function to update the score back to App.js
+    player.updateScore = updateScore;
     //Assign a callback function to reduce life
     player.reduceLife = reduceLife;
+    
     return player;
 }
 
-// A function which will make the game harder by adding more enemies and increasing possibility for higher speed
-function increaseDifficulty(score){
+//A function to update the score on UI
+function updateScore(score){
     console.log("callback:"+currentScore);
     currentScore = score;
     //Update score on screen
     $('#score').text(`Score:${currentScore}`);
-    //Give player a chance to play game a couple of times before increasing difficulty
-    if(currentScore%2 === 0){
+    //call increaseDifficulty to assess if game needs to be made more difficult
+    increaseDifficulty();
+}
+
+// A function which will make the game harder by adding more enemies and increasing possibility for higher speed
+function increaseDifficulty(){
+    //Give player a chance to play game few  times before increasing difficulty
+    if(currentScore%6 === 0){
         //add more enemy
         allEnemies.push(createEnemy());
     }
-    if(currentScore%3 === 0){
+    if(currentScore%8 === 0){
         //increase speed
         allEnemies.forEach((current)=>{
             current.increaseSpeed();
@@ -66,6 +83,7 @@ function increaseDifficulty(score){
     }
 }
 
+//function to reduce life
 function reduceLife(){
     livesRemoved++;
     console.log("live removed:"+livesRemoved);
@@ -78,6 +96,7 @@ function reduceLife(){
     }
 }
 
+//function to reset a game
 function resetGame(){
     livesRemoved=0;
     currentScore=0;
@@ -89,6 +108,7 @@ function resetGame(){
     $('#lives li').show();
 }
 
+//click handler for restarting a game
 $('#restart').click(function(){
     $('#selectPlayer').show();
     $('#game').hide();

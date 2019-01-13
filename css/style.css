@@ -5,7 +5,16 @@
 body {
     text-align: center;
     font-family: 'Major Mono Display', monospace;
-
+   
+}
+#selectPlayer h1{
+    margin:10px;
+    padding:10px;
+    border-radius:10px;
+    background: #20002c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:white;
 }
 #game {
     display: none;
@@ -13,11 +22,22 @@ body {
 #game-title {
     font-size: 1.5rem;
 }
+canvas{
+    margin:0;
+}
 #header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding:10px;
+    margin:0 10px;
+    margin-top:5px;
+    background: #20002c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:white;
+    border-radius:10px;
+}
 }
 
 .life {

@@ -116,5 +116,14 @@ let images = [
     'images/char-horn-girl.png',
     'images/char-pink-girl.png',
     'images/char-cat-girl.png',
+    'images/Key.png',
+    'images/Rock.png',
+    'images/Heart.png',
+    'images/Selector.png',
+    'images/Star.png',
+    'images/Gem Blue.png',
+    'images/Gem Green.png',
+    'images/Gem Orange.png'
+
 ];
 Resources.load(images);
