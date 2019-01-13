@@ -21,7 +21,6 @@ const TOTAL_LIVES=5;
 //Click listener for allowing user to choose a character and then get value of image path in a variable
 $('li').on('click',function(e){
     character = $(e.target).attr('src');
-    console.log(character);
     $('#selectPlayer').hide();
     $('#game').show();
 
@@ -60,7 +59,6 @@ function createPlayer(character){
 
 //A function to update the score on UI
 function updateScore(score){
-    console.log("callback:"+currentScore);
     currentScore = score;
     //Update score on screen
     $('#score').text(`Score:${currentScore}`);
@@ -86,11 +84,9 @@ function increaseDifficulty(){
 //function to reduce life
 function reduceLife(){
     livesRemoved++;
-    console.log("live removed:"+livesRemoved);
     $(`#lives li:nth-of-type(${livesRemoved})`).hide();
     if(livesRemoved >= TOTAL_LIVES){
         //game over
-        console.log("game over");
         $('.modal-body p').text(`Your score: ${currentScore}`);
         $('.modal').show();
     }

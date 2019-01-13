@@ -6,7 +6,6 @@ const WATERLOCATION = 606-171-101/2 - 83*5;
 class Player{
     constructor(character){
         this.sprite = character;
-        console.log("pl:"+this.sprite);
         this.resetLocation();
         this.score=0;
     }
@@ -15,7 +14,10 @@ class Player{
         ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
         this.showRandomCollectible();
     }
+    //This function is not used
+    update(dt){
 
+    }
     //A method to show a random collectible at random location
     showRandomCollectible(){
         if(this.collected)return;
@@ -83,14 +85,12 @@ class Player{
                 break;
         }
         if(this.y === WATERLOCATION){
-            console.log("water reached!");
             this.resetLocation();
             this.score++;
             this.collected=false;
             this.updateScore(this.score);
         }
         if(this.collectiblePosition && this.x === this.collectiblePosition.x && this.y === this.collectiblePosition.y){
-            console.log("collect it!");
             this.collectIt();
         }
         

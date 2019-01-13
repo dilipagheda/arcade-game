@@ -53,7 +53,6 @@ class EnemyBase {
             This will ensure an approximate match within reasonable proximity.
         */
 
-        //console.log(lowerX+ " "+ Math.floor(this.x) +" " + higherX +" pl:"+playerLocation.x);
         //check for collision after updating location
         this.checkCollision();
 
@@ -73,7 +72,6 @@ class EnemyBase {
         let higherX = Math.floor(this.x) + 3;
         if (playerLocation.x >= lowerX && playerLocation.x <= higherX) {
             if (playerLocation.y === this.y) {
-                console.log("collision");
                 this.player.resetLocation();
                 this.player.reduceLife();
 
