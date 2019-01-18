@@ -15,9 +15,9 @@ This project uses ES 6 style of classes.
 9. Enjoy the game!!
 
 ## How to setup the project locally
-Please download this folder to your local drive and just open index.html. That's it!
-You can also clone using link: https://github.com/dilipagheda/arcade-game.git
-If you just want to see the project in action, it is live at http://dilipagheda.com/arcade-game/
+- Please download this folder to your local drive and just open index.html. That's it!
+- You can also clone using link: https://github.com/dilipagheda/arcade-game.git
+- If you just want to see the project in action, it is live at http://dilipagheda.com/arcade-game/
 
 ## About the coding approach
 - This project has two classes that has game logic. A Player class and an Enemy class. As the name suggests, it encapsulates the logic of the player and enemy.
