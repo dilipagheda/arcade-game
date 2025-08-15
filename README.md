@@ -31,7 +31,7 @@ I'm excited to share a project that brings a classic arcade experience to life u
 
 You can check out the full project on GitHub: https://github.com/dilipagheda/arcade-game.
 
-Want to try the game for yourself? You can play it live here: [[Insert Live Demo Link Here](http://dilipagheda.com/arcade-game/)]
+Want to try the game for yourself? You can play it live here: [[http://dilipagheda.com/arcade-game/](http://dilipagheda.com/arcade-game/)]
 
 # Building with Object-Oriented Principles
 
