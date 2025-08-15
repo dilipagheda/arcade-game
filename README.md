@@ -25,14 +25,16 @@ This project uses ES 6 style of classes.
 - There are Engine.js and resources.js which are part of the gaming engine and its used for the graphics side of the project.
 
 ## Further Documentation
-A Deep Dive Into My Arcade Game Project
+# A Deep Dive Into My Arcade Game Project
+
 I'm excited to share a project that brings a classic arcade experience to life using modern JavaScript. This project isn't just a game; it's a showcase of the fundamental software design principles I value, built with clean, object-oriented code.
 
 You can check out the full project on GitHub: https://github.com/dilipagheda/arcade-game.
 
 Want to try the game for yourself? You can play it live here: [[Insert Live Demo Link Here](http://dilipagheda.com/arcade-game/)]
 
-Building with Object-Oriented Principles
+# Building with Object-Oriented Principles
+
 I built this project with a strong emphasis on Object-Oriented Programming (OOP), which was key to creating a scalable and maintainable application. Instead of a single, long script, I structured the game around distinct classes. This approach offers significant advantages over using regular functions alone.
 
 Using classes allows me to encapsulate related data and behavior into a single, cohesive unit. For example, my Player class contains all the properties (like position and speed) and methods (like update and render) that define the player. With a function-based approach, this logic would likely be spread across multiple functions and variables, making it harder to manage and debug. Classes also enable inheritance, which means I can create new types of objects that share common functionality, reducing code duplication. This makes the codebase more organized, easier to read, and more robust for future expansion.
@@ -45,7 +47,8 @@ I also used inheritance to create different enemy types. This allows for code re
 
 This approach demonstrates a deliberate choice to build a robust and organized application from the ground up.
 
-The Engine: Game Loop and Collision Detection
+# The Engine: Game Loop and Collision Detection
+
 The heart of the game is its game loop, which continuously updates the game state, renders visuals to the HTML5 canvas, and handles user input. I implemented a standard loop that ensures smooth and responsive gameplay.
 
 A crucial part of this was the collision detection logic. I wrote code to accurately compare the player and enemy coordinates to determine when their hitboxes overlap. This required careful problem-solving and a solid understanding of the geometric calculations needed to make the game function correctly.
